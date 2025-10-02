@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala 3</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+    video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="sala3construction.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    // Ajuste automático para diferentes pantallas
+    const video = document.getElementById('bgVideo');
+    
+    function adjustVideo() {
+      const screenRatio = window.innerWidth / window.innerHeight;
+      const videoRatio = video.videoWidth / video.videoHeight;
+      
+      if (screenRatio > videoRatio) {
+        // Pantalla más ancha que el video
+        video.style.width = '100%';
+        video.style.height = 'auto';
+      } else {
+        // Pantalla más alta que el video
+        video.style.width = 'auto';
+        video.style.height = '100%';
+      }
+    }
+    
+    video.addEventListener('loadeddata', adjustVideo);
+    window.addEventListener('resize', adjustVideo);
+  </script>
+</body>
+</html>
