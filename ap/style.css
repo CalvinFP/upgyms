@@ -1,0 +1,139 @@
+@font-face {
+    font-family: FP1;
+    src: url(Gotham-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: FP1;
+    color: #FFFFFF;
+    background-color: #3B444B;
+    background-image: url("fondo2.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#proximo{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    text-align: right;
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 25px;
+    padding: 2rem;
+}
+
+#prox{
+    text-align: right;
+    font-size: 2rem; 
+}
+
+h2{
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+h1{
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    align-items: center;
+    text-align: center;
+    color: #FFD600;
+}
+
+.coming-soon{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.countdown{
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.day,
+.hour,
+.minute,
+.second{
+    font-size: 5rem;
+}
+
+.container-second{
+    height: 15vh;
+    width: 15vh;
+    padding: 3vh;
+    color: #FFD600;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container-hour, 
+.container-minute, 
+.container-day{
+    height: 15vh;
+    width: 15vh;
+    padding: 3vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    text-align: center;
+    
+}
+
+
+.image{
+    height: 100vh;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.test{
+    padding: 2rem;
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 25px;
+    text-align: center;
+}
+
+#name {
+    opacity: 1; /* Asegura que el nombre esté visible inicialmente */
+    transition: opacity 1s ease-in-out; /* Transición de opacidad */
+}
+
+#totem {
+    position: absolute;
+    bottom: 9.5rem; /* Lo colocamos en la parte inferior */
+    left: 50%; /* Lo centramos horizontalmente */
+    transform: translateX(-50%); /* Corregimos la posición para centrarlo correctamente */
+}
+
+.fade {
+    animation: fadeEffect 3s infinite;
+}
+
+@keyframes fadeEffect {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
