@@ -3,7 +3,9 @@ console.log("Script cargado correctamente");
 document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
-        "Cuenca - Avenida Mediterraneo"
+        "Barcelona - Independencia",
+        "Sanlúcar - Las Dunas",
+        "Bormujos - Parque Universidad"
         // Agrega más nombres si es necesario
     ];
 
