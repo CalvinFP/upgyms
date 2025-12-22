@@ -3,9 +3,12 @@ console.log("Script cargado correctamente");
 document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
-        "Barcelona - Independencia",
         "Sanlúcar - Las Dunas",
-        "Bormujos - Parque Universidad"
+        "Bormujos - Parque Universidad",
+        "Tenerife - La Gran Manzana",
+        "Reus - Daily Reus",
+        "Vinarós - Parque Mediterraneo",
+        "Torrelavega - Plaza Mayor"
         // Agrega más nombres si es necesario
     ];
 
@@ -39,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const countdown =() =>{
-    const countDate = new Date('Dec 19, 2025 18:00:00').getTime();
+    const countDate = new Date('Dec 23, 2025 18:00:00').getTime();
     const now = new Date().getTime();
     const gap = countDate - now;
 
