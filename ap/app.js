@@ -3,7 +3,6 @@ console.log("Script cargado correctamente");
 document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
-        "Sanlúcar - Las Dunas",
         "Bormujos - Parque Universidad",
         "Tenerife - La Gran Manzana",
         "Reus - Daily Reus",
