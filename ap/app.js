@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
         "Bormujos - Parque Universidad",
-        "Tenerife - La Gran Manzana",
+        "Málaga - Velazquez",
         "Reus - Daily Reus",
+        "Marbella - Marbell Center",
         "Vinarós - Parque Mediterraneo"
         // Agrega más nombres si es necesario
     ];
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const countdown =() =>{
-    const countDate = new Date('Feb 6, 2026 18:00:00').getTime();
+    const countDate = new Date('Feb 13, 2026 18:00:00').getTime();
     const now = new Date().getTime();
     const gap = countDate - now;
 
