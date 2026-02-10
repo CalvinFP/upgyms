@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
         "Bormujos - Parque Universidad",
         "Málaga - Velazquez",
         "Reus - Daily Reus",
-        "Marbella - Marbell Center",
         "Vinarós - Parque Mediterraneo"
         // Agrega más nombres si es necesario
     ];
