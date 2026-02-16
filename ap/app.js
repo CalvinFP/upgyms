@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
         "Bormujos - Parque Universidad",
-        "Málaga - Velazquez",
         "Reus - Daily Reus",
         "Vinarós - Parque Mediterraneo"
         // Agrega más nombres si es necesario
