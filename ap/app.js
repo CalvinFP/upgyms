@@ -3,9 +3,10 @@ console.log("Script cargado correctamente");
 document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
-        "Bormujos - Parque Universidad",
-        "Reus - Daily Reus",
-        "Vinarós - Parque Mediterraneo"
+        "Barcelona - La Maquinista",
+        "Écija - N4",
+        "Madrid - Castellana 85",
+        "Fuenlabrada - Móstoles"
         // Agrega más nombres si es necesario
     ];
 
