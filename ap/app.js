@@ -3,7 +3,6 @@ console.log("Script cargado correctamente");
 document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
-        "Barcelona - La Maquinista",
         "Écija - N4",
         "Madrid - Castellana 85",
         "Fuenlabrada - Móstoles"
