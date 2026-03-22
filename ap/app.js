@@ -3,8 +3,8 @@ console.log("Script cargado correctamente");
 document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
-        "Écija - N4",
-        "Madrid - Castellana 85",
+        "Tenerife - La Gran Manzana",
+        "Burgos - Parque Arlanzon",
         "Fuenlabrada - Móstoles"
         // Agrega más nombres si es necesario
     ];
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const countdown =() =>{
-    const countDate = new Date('Mar 19, 2026 18:00:00').getTime();
+    const countDate = new Date('Mar 27, 2026 18:00:00').getTime();
     const now = new Date().getTime();
     const gap = countDate - now;
 
