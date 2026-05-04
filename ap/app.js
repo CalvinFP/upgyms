@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var names = [ 
         "Tenerife - La Gran Manzana",
         "Burgos - Parque Arlanzon",
-        "Talavera de la Reina  - Prado"
+        "Valencia - Paiporta"
         // Agrega más nombres si es necesario
     ];
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const countdown =() =>{
-    const countDate = new Date('Apr 30, 2026 18:00:00').getTime();
+    const countDate = new Date('May 21, 2026 18:00:00').getTime();
     const now = new Date().getTime();
     const gap = countDate - now;
 
