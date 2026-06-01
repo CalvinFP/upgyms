@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var names = [ 
         "Tenerife - La Gran Manzana",
         "Burgos - Parque Arlanzon",
-        "Huelva - La Hispanidad",
-        "Valencia - Paiporta"
+        "Huelva - La Hispanidad"
         // Agrega más nombres si es necesario
     ];
 
