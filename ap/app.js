@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const countdown =() =>{
-    const countDate = new Date('Jun 18, 2026 18:00:00').getTime();
+    const countDate = new Date('Jun 19, 2026 18:00:00').getTime();
     const now = new Date().getTime();
     const gap = countDate - now;
 
