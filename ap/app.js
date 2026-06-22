@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Array de nombres a mostrar
     var names = [ 
         "Palma de Mallorca - Aragó",
-        "Vitoria - Beato Tomás de Zumarrága"
+        "Murcia - Alameda Colón"
         // Agrega más nombres si es necesario
     ];
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const countdown =() =>{
-    const countDate = new Date('Jun 19, 2026 18:00:00').getTime();
+    const countDate = new Date('Jul 3, 2026 18:00:00').getTime();
     const now = new Date().getTime();
     const gap = countDate - now;
 
