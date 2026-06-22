@@ -84,5 +84,10 @@ const countdown =() =>{
 countdown();
 setInterval(countdown, 1000);
 
-
+// ==========================
+// REFRESH AUTOMÁTICO CADA 24H
+// ==========================
+setInterval(function () {
+    window.location.reload();
+}, 24 * 60 * 60 * 1000);
 
