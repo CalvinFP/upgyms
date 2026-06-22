@@ -14,7 +14,7 @@ body {
     color: #FFFFFF;
     background-color: #111;
     background-image:
-        linear-gradient(rgba(8, 10, 14, 0.15), rgba(8, 10, 14, 0.35)),
+        linear-gradient(rgba(4, 5, 7, 0.10), rgba(4, 5, 7, 0.25)),
         url("fondo2.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@ body {
 /* PANEL PRINCIPAL */
 .test {
     padding: 4rem 5rem;
-    background: rgba(30, 30, 30, 0.45);
+    background: rgba(30, 30, 30, 0.25);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-radius: 35px;
