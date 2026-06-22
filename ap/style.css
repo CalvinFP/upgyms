@@ -14,7 +14,7 @@ body {
     color: #FFFFFF;
     background-color: #111;
     background-image:
-        linear-gradient(rgba(8, 10, 14, 0.45), rgba(8, 10, 14, 0.75)),
+        linear-gradient(rgba(8, 10, 14, 0.15), rgba(8, 10, 14, 0.35)),
         url("fondo2.png");
     background-position: center;
     background-repeat: no-repeat;
