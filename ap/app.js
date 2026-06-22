@@ -84,10 +84,30 @@ const countdown =() =>{
 countdown();
 setInterval(countdown, 1000);
 
-// ==========================
-// REFRESH AUTOMÁTICO CADA 24H
-// ==========================
-setInterval(function () {
-    window.location.reload();
-}, 24 * 60 * 60 * 1000);
+// Refresh automático todos los días a las 07:00
+function programarRefresh7AM() {
+    const ahora = new Date();
+    const proximoRefresh = new Date();
+
+    // Establecer la hora objetivo a las 07:00:00
+    proximoRefresh.setHours(7, 0, 0, 0);
+
+    // Si ya han pasado las 07:00 de hoy, programar para mañana
+    if (ahora >= proximoRefresh) {
+        proximoRefresh.setDate(proximoRefresh.getDate() + 1);
+    }
+
+    // Calcular cuánto falta hasta las 07:00
+    const tiempoHastaRefresh = proximoRefresh - ahora;
+
+    console.log("Próximo refresh en:", tiempoHastaRefresh / 1000, "segundos");
+
+    // Esperar hasta esa hora y hacer F5
+    setTimeout(function () {
+        window.location.reload();
+    }, tiempoHastaRefresh);
+}
+
+// Iniciar programación del refresh
+programarRefresh7AM();
 
