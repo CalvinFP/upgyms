@@ -12,128 +12,149 @@
 body {
     font-family: FP1;
     color: #FFFFFF;
-    background-color: #3B444B;
-    background-image: url("fondo2.png");
-    height: 100%;
+    background-color: #111;
+    background-image:
+        linear-gradient(rgba(8, 10, 14, 0.45), rgba(8, 10, 14, 0.75)),
+        url("fondo2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-#proximo{
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    text-align: right;
-    background-color: rgba(50, 50, 50, 0.8);
-    border-radius: 25px;
-    padding: 2rem;
-}
-
-#prox{
-    text-align: right;
-    font-size: 2rem; 
-}
-
-h2{
-    font-size: 5rem;
-    font-weight: bold;
-    padding: 0.5rem;
-    align-items: center;
+/* PANEL PRINCIPAL */
+.test {
+    padding: 4rem 5rem;
+    background: rgba(30, 30, 30, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 35px;
     text-align: center;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
-h1{
-    font-size: 5rem;
-    font-weight: bold;
-    padding: 0.5rem;
-    align-items: center;
-    text-align: center;
-    color: #FFD600;
-}
-
-.coming-soon{
+.coming-soon {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
 }
 
-.countdown{
-    padding-top: 3rem;
+/* TITULOS */
+h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: rgba(255,255,255,0.95);
+}
+
+h1 {
+    font-size: 5.5rem;
+    font-weight: bold;
+    color: #FFD600;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(255,214,0,0.15);
+}
+
+/* COUNTDOWN */
+.countdown {
+    padding-top: 2rem;
     display: flex;
-    justify-content: space-evenly;
-    text-align: center;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.container-day,
+.container-hour,
+.container-minute,
+.container-second {
+    width: 180px;
+    height: 180px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+        180deg,
+        rgba(15,15,15,0.85),
+        rgba(30,30,30,0.7)
+    );
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.container-second {
+    border: 1px solid rgba(255,214,0,0.25);
+    box-shadow:
+        0 0 30px rgba(255,214,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 .day,
 .hour,
 .minute,
-.second{
+.second {
     font-size: 5rem;
+    line-height: 1;
 }
 
-.container-second{
-    height: 15vh;
-    width: 15vh;
-    padding: 3vh;
+.second {
     color: #FFD600;
-    border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.container-hour, 
-.container-minute, 
-.container-day{
-    height: 15vh;
-    width: 15vh;
-    padding: 3vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 25px;
-    text-align: center;
-    
+.container-day h3:last-child,
+.container-hour h3:last-child,
+.container-minute h3:last-child,
+.container-second h3:last-child {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
 }
 
-
-.image{
-    height: 100vh;
-    padding-top: 2rem;
-    display: flex;
-    align-items: center;
+/* SIGUIENTES */
+#proximo {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 1.4rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
 }
 
-.test{
-    padding: 2rem;
-    background-color: rgba(50, 50, 50, 0.8);
-    border-radius: 25px;
-    text-align: center;
+#prox {
+    font-size: 1.8rem;
 }
 
 #name {
-    opacity: 1; /* Asegura que el nombre esté visible inicialmente */
-    transition: opacity 1s ease-in-out; /* Transición de opacidad */
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out;
 }
 
+/* TOTEM */
 #totem {
     position: absolute;
-    bottom: 9.5rem; /* Lo colocamos en la parte inferior */
-    left: 50%; /* Lo centramos horizontalmente */
-    transform: translateX(-50%); /* Corregimos la posición para centrarlo correctamente */
+    bottom: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 12px 20px rgba(0,0,0,0.35));
 }
 
+#totem img {
+    width: 110px;
+    height: 110px;
+}
+
+/* ANIMACIONES */
 .fade {
     animation: fadeEffect 3s infinite;
 }
 
 @keyframes fadeEffect {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
