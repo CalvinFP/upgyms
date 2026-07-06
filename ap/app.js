@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // COUNTDOWN
-    const countDate = new Date("Jul 3, 2026 18:00:00").getTime();
+    const countDate = new Date("Jul 10, 2026 18:00:00").getTime();
 
     function formatTime(value) {
         return String(value).padStart(2, "0");
