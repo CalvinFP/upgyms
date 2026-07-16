@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Próximas aperturas
     const names = [
         "Tenerife - La Gran Manzana",
-        "Alicante - Luceros"
+        "Córdoba - La Sierra"
     ];
 
     let nameIndex = 0;
