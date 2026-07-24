@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Próximas aperturas
     const names = [
         "Puerto de Sagunto - Av Hispanidad",
-        "Córdoba - La Sierra"
+        "Gines - Avenida Europa"
     ];
 
     let nameIndex = 0;
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // COUNTDOWN
-    const countDate = new Date("Jul 23, 2026 18:00:00").getTime();
+    const countDate = new Date("Aug 13, 2026 18:00:00").getTime();
 
     function formatTime(value) {
         return String(value).padStart(2, "0");
