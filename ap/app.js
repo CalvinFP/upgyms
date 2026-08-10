@@ -2,11 +2,14 @@ console.log("Script cargado correctamente");
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // === APERTURAS EN ORDEN: solo tocas esta lista ===
+  // === APERTURAS OFICIALES (en orden) ===
   const aperturas = [
-    { name: "Córdoba - La Sierra",               fecha: "Aug 10, 2026 15:50:00" },
-    { name: "Puerto de Sagunto - Av Hispanidad", fecha: "Aug 10, 2026 15:55:00" },
-    { name: "Gines - Avenida Europa",            fecha: "Oct 15, 2026 16:00:00" }
+    { name: "Fitness Park Córdoba - La Sierra",                       fecha: "Aug 13, 2026 18:00:00" },
+    { name: "Fitness Park Puerto de Sagunto - Av Hispanidad",         fecha: "Aug 14, 2026 18:00:00" },
+    { name: "Fitness Park Gines - Avenida Europa",                    fecha: "Aug 28, 2026 18:00:00" },
+    { name: "Leganés - Parquesur",                                    fecha: "Sep 3, 2026 18:00:00" },
+    { name: "Fitness Park Villanueva de la Serena - Ctra Don Benito", fecha: "Sep 4, 2026 18:00:00" },
+    { name: "Fitness Park A Coruña - Torreiro",                       fecha: "Sep 11, 2026 18:00:00" }
   ];
 
   const elTitulo = document.querySelector(".test h1");
@@ -24,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const fmt = (v) => String(Math.max(0, v)).padStart(2, "0");
 
   function seleccionarActual() {
+    aperturas.sort((a, b) => ts(a) - ts(b));      // por si añades una desordenada
     const now = Date.now();
     actual = aperturas.findIndex(a => ts(a) > now);
 
@@ -60,8 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const gap = ts(aperturas[actual]) - Date.now();
 
-    // llegó a 0 -> salta a la siguiente apertura
-    if (gap <= 0) {
+    if (gap <= 0) {           // llegó a 0 -> salta a la siguiente
       seleccionarActual();
       return countdown();
     }
