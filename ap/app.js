@@ -2,84 +2,88 @@ console.log("Script cargado correctamente");
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Próximas aperturas
-    const names = [
-        "Puerto de Sagunto - Av Hispanidad",
-        "Gines - Avenida Europa"
-    ];
+  // === APERTURAS EN ORDEN: solo tocas esta lista ===
+  const aperturas = [
+    { name: "Córdoba - La Sierra",               fecha: "Aug 10, 2026 15:50:00" },
+    { name: "Puerto de Sagunto - Av Hispanidad", fecha: "Aug 10, 2026 15:55:00" },
+    { name: "Gines - Avenida Europa",            fecha: "Oct 15, 2026 16:00:00" }
+  ];
 
-    let nameIndex = 0;
+  const elTitulo = document.querySelector(".test h1");
+  const elName   = document.getElementById("name");
+  const elDay    = document.querySelector(".day");
+  const elHour   = document.querySelector(".hour");
+  const elMin    = document.querySelector(".minute");
+  const elSec    = document.querySelector(".second");
 
-    function changeNameWithFade() {
-        const nameSpan = document.getElementById("name");
+  let actual = -1;
+  let siguientes = [];
+  let nameIndex = 0;
 
-        nameSpan.style.opacity = 0;
+  const ts = (a) => new Date(a.fecha).getTime();
+  const fmt = (v) => String(Math.max(0, v)).padStart(2, "0");
 
-        setTimeout(function () {
-            nameSpan.textContent = names[nameIndex];
-            nameIndex = (nameIndex + 1) % names.length;
-            nameSpan.style.opacity = 1;
-        }, 600);
+  function seleccionarActual() {
+    const now = Date.now();
+    actual = aperturas.findIndex(a => ts(a) > now);
+
+    if (actual === -1) {
+      elTitulo.textContent = "¡Muy pronto!";
+      siguientes = [];
+    } else {
+      elTitulo.textContent = aperturas[actual].name;
+      siguientes = aperturas.slice(actual + 1).map(a => a.name);
     }
 
-    changeNameWithFade();
-    setInterval(changeNameWithFade, 5000);
+    nameIndex = 0;
+    cambiarNombre();
+  }
 
+  function cambiarNombre() {
+    elName.style.opacity = 0;
+    setTimeout(function () {
+      if (siguientes.length === 0) {
+        elName.textContent = "-";
+      } else {
+        elName.textContent = siguientes[nameIndex];
+        nameIndex = (nameIndex + 1) % siguientes.length;
+      }
+      elName.style.opacity = 1;
+    }, 600);
+  }
 
-    // COUNTDOWN
-    const countDate = new Date("Aug 13, 2026 18:00:00").getTime();
-
-    function formatTime(value) {
-        return String(value).padStart(2, "0");
+  function countdown() {
+    if (actual === -1) {
+      elDay.innerText = elHour.innerText = elMin.innerText = elSec.innerText = "00";
+      return;
     }
 
-    function countdown() {
-        const now = new Date().getTime();
-        const gap = countDate - now;
+    const gap = ts(aperturas[actual]) - Date.now();
 
-        const second = 1000;
-        const minute = second * 60;
-        const hour = minute * 60;
-        const day = hour * 24;
-
-        const textDay = Math.floor(gap / day);
-        const textHour = Math.floor((gap % day) / hour);
-        const textMinute = Math.floor((gap % hour) / minute);
-        const textSecond = Math.floor((gap % minute) / second);
-
-        document.querySelector(".day").innerText = formatTime(textDay);
-        document.querySelector(".hour").innerText = formatTime(textHour);
-        document.querySelector(".minute").innerText = formatTime(textMinute);
-        document.querySelector(".second").innerText = formatTime(textSecond);
+    // llegó a 0 -> salta a la siguiente apertura
+    if (gap <= 0) {
+      seleccionarActual();
+      return countdown();
     }
 
-    countdown();
-    setInterval(countdown, 1000);
+    const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
+    elDay.innerText  = fmt(Math.floor(gap / day));
+    elHour.innerText = fmt(Math.floor((gap % day) / hour));
+    elMin.innerText  = fmt(Math.floor((gap % hour) / minute));
+    elSec.innerText  = fmt(Math.floor((gap % minute) / second));
+  }
 
+  seleccionarActual();
+  countdown();
+  setInterval(countdown, 1000);
+  setInterval(cambiarNombre, 5000);
 
-    // REFRESH A LAS 07:00
-    function programarRefresh7AM() {
-        const ahora = new Date();
-        const proximoRefresh = new Date();
-
-        proximoRefresh.setHours(7, 0, 0, 0);
-
-        if (ahora >= proximoRefresh) {
-            proximoRefresh.setDate(proximoRefresh.getDate() + 1);
-        }
-
-        const tiempoHastaRefresh = proximoRefresh - ahora;
-
-        console.log(
-            "Refresh programado en",
-            Math.round(tiempoHastaRefresh / 1000),
-            "segundos"
-        );
-
-        setTimeout(function () {
-            window.location.reload();
-        }, tiempoHastaRefresh);
-    }
-
-    programarRefresh7AM();
+  // REFRESH A LAS 07:00
+  (function programarRefresh7AM() {
+    const ahora = new Date();
+    const proximo = new Date();
+    proximo.setHours(7, 0, 0, 0);
+    if (ahora >= proximo) proximo.setDate(proximo.getDate() + 1);
+    setTimeout(() => window.location.reload(), proximo - ahora);
+  })();
 });
