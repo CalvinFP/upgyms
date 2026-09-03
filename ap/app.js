@@ -4,13 +4,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === APERTURAS OFICIALES (en orden) ===
   const aperturas = [
-    { name: "Gines - Avenida Europa",                    fecha: "Aug 28, 2026 18:00:00" },
-    { name: "Leganés - Parquesur",                       fecha: "Sep 3, 2026 18:00:00" },
-    { name: "Villanueva de la Serena - Carretera Don Benito", fecha: "Sep 4, 2026 18:00:00" },
-    { name: "Granada - Juan Pablo II",
-            "Lleida - Pere Cabrera",                   
-            "A Coruña - Torreiro",                       fecha: "Sep 18, 2026 18:00:00" }
-  ];
+const aperturas = [
+  { 
+    name: "Gines - Avenida Europa", 
+    fecha: "Aug 28, 2026 18:00:00" 
+  },
+  { 
+    name: "Leganés - Parquesur", 
+    fecha: "Sep 3, 2026 18:00:00" 
+  },
+  { 
+    name: "Villanueva de la Serena - Carretera Don Benito", 
+    fecha: "Sep 4, 2026 18:00:00" 
+  },
+  { 
+    name: "Granada - Juan Pablo II", 
+    fecha: "Sep 18, 2026 18:00:00" 
+  },
+  { 
+    name: "Lleida - Pere Cabrera", 
+    fecha: "Sep 18, 2026 18:00:00" 
+  },
+  { 
+    name: "A Coruña - Torreiro", 
+    fecha: "Sep 18, 2026 18:00:00" 
+  }
+];
 
   const elTitulo = document.querySelector(".test h1");
   const elName   = document.getElementById("name");
