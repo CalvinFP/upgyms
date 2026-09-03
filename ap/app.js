@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       name: "Leganés - Parquesur",
-      fecha: "Sep 3, 2026 18:00:00"
+      fecha: "Sep 2, 2026 18:00:00"
     },
     {
       name: "Villanueva de la Serena - Carretera Don Benito",
-      fecha: "Sep 4, 2026 18:00:00"
+      fecha: "Sep 2, 2026 18:00:00"
     },
     {
       name: "Granada - Juan Pablo II",
