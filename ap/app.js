@@ -5,16 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // === APERTURAS OFICIALES (en orden) ===
   const aperturas = [
     {
-      name: "Gines - Avenida Europa",
-      fecha: "Aug 28, 2026 18:00:00"
+      name: "Línea - La Alcaidesa",
+      fecha: "Nov 12, 2026 18:00:00"
     },
     {
-      name: "Leganés - Parquesur",
-      fecha: "Sep 3, 2026 18:00:00"
-    },
-    {
-      name: "Villanueva de la Serena - Carretera Don Benito",
-      fecha: "Sep 4, 2026 18:00:00"
+      name: "Valencia - L'Eliana",
+      fecha: "Oct 30, 2026 18:00:00"
     },
     {
       name: "Granada - Juan Pablo II",
@@ -26,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       name: "A Coruña - Torreiro",
-      fecha: "Sep 18, 2026 18:00:00"
+      fecha: "Sep 17, 2026 18:00:00"
     }
   ];
 
