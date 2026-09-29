@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aperturas Fitness Park</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,800;0,900;1,900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="pantalla">
+
+    <!-- Confeti de fondo (lo rellena app.js) -->
+    <div class="confeti" id="confeti" aria-hidden="true"></div>
+
+    <!-- LOGO -->
+    <header class="logo">
+      <h1 class="logo-texto">Fitness Park</h1>
+      <div class="logo-linea"></div>
+      <p class="logo-lema">Desafíate - Supérate</p>
+    </header>
+
+    <!-- TARJETA: PRÓXIMA APERTURA -->
+    <section class="tarjeta">
+      <h2 class="tarjeta-titulo">Próxima apertura</h2>
+      <h3 class="tarjeta-club" id="club">¡Muy pronto!</h3>
+      <p class="tarjeta-fecha" id="fecha"></p>
+
+      <div class="countdown" id="countdown">
+        <div class="casilla">
+          <span class="casilla-num" id="dias">00</span>
+          <span class="casilla-texto">Días</span>
+        </div>
+        <div class="casilla">
+          <span class="casilla-num" id="horas">00</span>
+          <span class="casilla-texto">Horas</span>
+        </div>
+        <div class="casilla">
+          <span class="casilla-num" id="minutos">00</span>
+          <span class="casilla-texto">Minutos</span>
+        </div>
+        <div class="casilla casilla-segundos">
+          <span class="casilla-num" id="segundos">00</span>
+          <span class="casilla-texto">Segundos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDARIO DE APERTURAS -->
+    <section class="carril">
+      <p class="carril-titulo">Calendario de aperturas</p>
+      <div class="carril-pista" id="pista">
+        <div class="carril-base"></div>
+        <div class="carril-relleno" id="relleno"></div>
+        <div class="carril-hoy" id="hoy">
+          <img src="totem.png" alt="">
+          <span>Hoy</span>
+        </div>
+        <!-- las paradas (clubes) las crea app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
