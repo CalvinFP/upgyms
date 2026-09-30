@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Cuando cambies style.css, app.js o mapa.js, sube el número de ?v= para que las pantallas no usen la versión vieja -->
+  <title>Aperturas Fitness Park</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,900&family=Archivo:ital,wdth,wght@1,62..125,900&display=swap">
+  <link rel="stylesheet" href="style.css?v=21">
+</head>
+<body>
+<main class="pantalla">
+
+    <!-- BARRA SUPERIOR: reloj · logo · cifras -->
+    <div class="barra">
+      <div class="reloj">
+        <span class="reloj-hora" id="hora">00:00</span>
+        <span class="reloj-fecha" id="hoyFecha"></span>
+      </div>
+
+      <header class="logo">
+        <h1 class="logo-texto">Fitness Park</h1>
+        <div class="logo-linea"></div>
+        <p class="logo-lema">Desafíate - Supérate</p>
+      </header>
+
+      <div class="cifras">
+        <div class="cifra">
+          <span class="cifra-num" id="nTotales">0</span>
+          <span class="cifra-texto">Clubes totales</span>
+        </div>
+        <div class="cifra cifra-amarilla">
+          <span class="cifra-num" id="nAbiertos">0</span>
+          <span class="cifra-texto" id="nAbiertosTexto">Abiertos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTRO: mapa + próxima apertura -->
+    <div class="centro">
+      <figure class="mapa">
+        <svg id="mapa" aria-label="Mapa de aperturas"></svg>
+      </figure>
+
+      <section class="tarjeta" id="tarjeta">
+        <h2 class="tarjeta-titulo" id="tarjetaTitulo">Próxima apertura</h2>
+        <h3 class="tarjeta-club" id="club">¡Muy pronto!</h3>
+        <p class="tarjeta-fecha" id="fecha"></p>
+
+        <div class="countdown" id="countdown">
+          <div class="casilla">
+            <span class="casilla-num" id="dias">00</span>
+            <span class="casilla-texto">Días</span>
+          </div>
+          <div class="casilla">
+            <span class="casilla-num" id="horas">00</span>
+            <span class="casilla-texto">Horas</span>
+          </div>
+          <div class="casilla">
+            <span class="casilla-num" id="minutos">00</span>
+            <span class="casilla-texto">Minutos</span>
+          </div>
+          <div class="casilla casilla-segundos">
+            <span class="casilla-num" id="segundos">00</span>
+            <span class="casilla-texto">Segundos</span>
+          </div>
+        </div>
+
+        <!-- Se ve solo cuando un club acaba de abrir -->
+        <div class="celebracion" id="celebracion">
+          <span class="celebracion-texto">¡Ya abierto!</span>
+          <span class="celebracion-num" id="celebracionNum"></span>
+        </div>
+      </section>
+    </div>
+
+    <!-- LÍNEA TEMPORAL DE APERTURAS -->
+    <section class="carril">
+      <div class="carril-pista" id="pista">
+        <div class="carril-base"></div>
+        <div class="carril-relleno" id="relleno"></div>
+        <div class="carril-hoy" id="hoy">
+          <img src="totem.png" alt="">
+          <span>Hoy</span>
+        </div>
+        <!-- las paradas (clubes) las crea app.js -->
+      </div>
+    </section>
+
+    <!-- AVISO INTERNO (solo se ve si hay alguno activo) -->
+    <div class="aviso" id="aviso">
+      <span class="aviso-etiqueta">Aviso</span>
+      <span class="aviso-texto" id="avisoTexto"></span>
+    </div>
+
+  </main>
+
+  <!-- Velo oscuro del modo noche -->
+  <div class="velo"></div>
+
+  <script src="mapa.js?v=21"></script>
+  <script src="app.js?v=21"></script>
+</body>
+</html>
